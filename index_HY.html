@@ -1,0 +1,46 @@
+<html>
+<link rel="shortcut icon" href="http://qqjsz.cn/p/60915163.jpg"> 
+<head>
+  <title id="title">冰棘便利店，加好友跳转中......</title>
+ </head>
+ <body>
+  <script>
+  function getUA(){
+   return navigator.userAgent;
+  }
+  alipayURL="https://qr.alipay.com/a7x016830wrcsm2s3r02w2d";
+  wechatURL="https://u.wechat.com/MCrk-xQKP8xcmCLuz5K_hH4";
+  qqURL="https://qm.qq.com/cgi-bin/qm/qr?k=hrqvJtxwpYVsOWBLSrHuWxNLiFu51vlr";
+  wechat = "MicroMessenger";
+  alipay = "AlipayClient";
+  qq = "QQ";
+  userAgent = getUA();
+  if(userAgent.indexOf(wechat)!=-1){
+   //微信
+   window.location.href=wechatURL;
+  }else if(userAgent.indexOf(qq)!=-1){
+   //QQ
+   window.location.href=qqURL;
+  }else if(userAgent.indexOf(alipay)!=-1){
+   //支付宝
+   window.location.href=alipayURL;
+  }else{
+   //不是支付宝、微信或QQ中的一个
+   alert("无法识别的客户端！请在QQ、微信或支付宝内打开！");
+  }
+</script>
+  <div id="container">
+   <h1>详细信息</h1>
+   <h3>如果遇到了问题，请将此页面截屏发送给开发者</h3>
+   <p>邮箱:1316540636@qq.com</p>
+   <div id="ua"><p>UA:</p></div> 
+   <duv id="link"><p>URL:</p></div>
+   <p>版本:1.0</p>
+   <script>
+    document.getElementById("link").innerHTML = "URL:"+ window.location.href
+    document.getElementById("ua").innerHTML=("UA:"+navigator.userAgent);
+    document.getElementById("title").innerHTML="错误！";
+   </script>
+  </div>
+ </body>
+</html>
